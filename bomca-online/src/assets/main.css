@@ -11,5 +11,8 @@
   }
   body {
     @apply font-source;
-  }
+  }/* 
+  .canvas-input {
+    @apply ;
+  } */
 }

@@ -3,7 +3,7 @@ import { RouterView } from 'vue-router'
 </script>
 
 <template>
-  <div class="bg-gray-600 w-screen h-screen overflow-hidden py-8">
+  <div class="bg-gray-600 w-screen h-screen p-4">
     <RouterView />
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" class="absolute opacity-50 z-0 bottom-0">
       <path fill="#374151" fill-opacity="1"
