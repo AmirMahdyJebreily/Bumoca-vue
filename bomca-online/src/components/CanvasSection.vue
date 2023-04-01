@@ -10,9 +10,6 @@ function insertAt(array, index, ...elementsArray) {
 }
 
 function addItem(event) {
-    if (event.target.value === "") {
-        event.target.value = " "
-    }
     items.value[event.target.id] = event.target.value
     insertAt(items.value, parseInt(event.target.id) + 1, "");
     setTimeout(() => {
