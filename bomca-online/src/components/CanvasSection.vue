@@ -5,24 +5,33 @@ const props = defineProps({
     title: String
 })
 
-function addItem() {
-    if (itemsRef.value[itemsRef.value.length - 1].value === "") {
-        itemsRef.value[itemsRef.value.length - 1].value = " "
+function insertAt(array, index, ...elementsArray) {
+    array.splice(index, 0, ...elementsArray);
+}
+
+function addItem(event) {
+    if (event.target.value === "") {
+        event.target.value = " "
     }
-    items.value[items.value.length - 1] = itemsRef.value[itemsRef.value.length - 1].value
-    items.value.push("");
+    items.value[event.target.id] = event.target.value
+    insertAt(items.value, parseInt(event.target.id) + 1, "");
     setTimeout(() => {
-        itemsRef.value[itemsRef.value.length - 1].focus();
+        itemsRef.value[parseInt(event.target.id) + 1].focus();
     }, 2);
 }
 
-function deleteItem() {
-    if (items.value.length > 1)
-    {
-        items.value.pop();
-        setTimeout(() => {
-            itemsRef.value[itemsRef.value.length - 1].focus();
-        }, 2);
+function editItem(event) {
+    items.value[event.target.id] = event.target.value
+}
+
+function deleteItem(event) {
+    if (event.target.value.length === 0) {
+        if (items.value.length > 1) {
+            items.value.splice(event.target.id, 1);
+            setTimeout(() => {
+                itemsRef.value[event.target.id - 1].focus();
+            }, 1);
+        }
     }
 }
 
@@ -39,8 +48,9 @@ const itemsRef = ref([]);
             <p class="text-gray-800">{{ props.title }}</p>
         </div>
         <div class="flex-1 w-full pt-2 pl-4 text-gray-700">
-            <input type="text" v-for="item in items" ref="itemsRef" class="bg-transparent outline-none w-full placeholder:italic placeholder:text-black/30 border-l border-slate-800/10 pl-4" placeholder="add an item ... "
-                :value="item" @keydown.enter="addItem()" @keydown.delete="deleteItem()" />
+            <input type="text" v-for="item in items" ref="itemsRef" :id="items.indexOf(item)"
+                class="bg-transparent outline-none w-full border-l border-slate-800/10 pl-4" :value="item"
+                @keydown.enter="addItem($event)" @change="editItem($event)" @keydown.delete="deleteItem($event)" />
 
         </div>
     </div>
