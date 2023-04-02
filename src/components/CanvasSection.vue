@@ -14,7 +14,7 @@ function addItem(event) {
     insertAt(items.value, parseInt(event.target.id) + 1, "");
     setTimeout(() => {
         itemsRef.value[parseInt(event.target.id) + 1].focus();
-    }, 2);
+    }, 0.01);
 }
 
 function editItem(event) {
@@ -22,12 +22,17 @@ function editItem(event) {
 }
 
 function deleteItem(event) {
+    const len = items.value.length;
     if (event.target.value.length === 0) {
         if (items.value.length > 1) {
             items.value.splice(event.target.id, 1);
             setTimeout(() => {
-                itemsRef.value[event.target.id - 1].focus();
-            }, 1);
+                try { 
+                    itemsRef.value[event.target.id - 1].focus();
+                } catch (error) {
+                    
+                }
+            }, 0.01);
         }
     }
 }
