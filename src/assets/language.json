@@ -1,0 +1,28 @@
+{
+  "fa": {
+    "title-placeholder": "عنوان بوم مدل کسب و کار شما",
+    "sub-title-placeholder": "چه کسی یا چه کسانی این بودم مدل کسب و کار را طراحی کردند",
+    "section-ky-part": "شرکای کلیدی",
+    "section-ky-act": "فعالیت کلیدی",
+    "section-ky-res": "منابع کلیدی",
+    "section-val": "ارزش پیشنهادی",
+    "section-cous-rel": "ارتباط با مشتریان",
+    "section-chnl": "کانال ها",
+    "section-cus-seg": "بخش بندی مشتریان",
+    "section-cst-stru": "ساختار هزینه",
+    "section-incm-strm": "جریان ها درآمدی"
+  },
+  "en": {
+    "title-placeholder": "Title of your Business model",
+    "sub-title-placeholder": "Write down who or what people created this business model canvas",
+    "section-ky-part": "Key Partners",
+    "section-ky-act": "Key Activity",
+    "section-ky-res": "Key Resources",
+    "section-val": "Value proposition",
+    "section-cous-rel": "Customer Relationships",
+    "section-chnl": "Channels",
+    "section-cus-seg": "Customer Segments",
+    "section-cst-stru": "Cost Structure",
+    "section-incm-strm": "Income streams"
+  }
+}

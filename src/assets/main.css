@@ -5,14 +5,10 @@
 @layer base {
   .font-vazir {
     font-family: "Vazirmatn", Tahoma, sans-serif;
+    direction: rtl;
   }
   .font-source {
     font-family: "Source Sans Pro", sans-serif;
+    direction: ltr;
   }
-  body {
-    @apply font-source;
-  }/* 
-  .canvas-input {
-    @apply ;
-  } */
 }
